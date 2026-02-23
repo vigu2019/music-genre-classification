@@ -27,42 +27,36 @@ def extract_features(file_path):
     y, sr = librosa.load(file_path, duration=30)
     features = []
 
-    # Length
     features.append(len(y))
 
-    # Chroma STFT
+
     chroma = librosa.feature.chroma_stft(y=y, sr=sr)
     features += [chroma.mean(), chroma.var()]
 
-    # RMS Energy
+    
     rms = librosa.feature.rms(y=y)
     features += [rms.mean(), rms.var()]
 
-    # Spectral Centroid
+
     spec_cent = librosa.feature.spectral_centroid(y=y, sr=sr)
     features += [spec_cent.mean(), spec_cent.var()]
 
-    # Spectral Bandwidth
     spec_bw = librosa.feature.spectral_bandwidth(y=y, sr=sr)
     features += [spec_bw.mean(), spec_bw.var()]
 
-    # Spectral Rolloff
     rolloff = librosa.feature.spectral_rolloff(y=y, sr=sr)
     features += [rolloff.mean(), rolloff.var()]
 
-    # Zero Crossing Rate
     zcr = librosa.feature.zero_crossing_rate(y)
     features += [zcr.mean(), zcr.var()]
 
-    # Harmony & Percussive
+
     harmony, perceptr = librosa.effects.hpss(y)
     features += [harmony.mean(), harmony.var(), perceptr.mean(), perceptr.var()]
 
-    # Tempo
     tempo, _ = librosa.beat.beat_track(y=y, sr=sr)
     features.append(float(tempo))
 
-    # MFCCs (20 coefficients)
     mfcc = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=20)
     for coef in mfcc:
         features += [coef.mean(), coef.var()]

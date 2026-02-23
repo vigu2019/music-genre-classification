@@ -7,3 +7,4 @@ seaborn
 soundfile
 jupyter
 ipykernel
+streamlit

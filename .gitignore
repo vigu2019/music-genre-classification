@@ -1,8 +1,11 @@
 # Dataset (too large for GitHub)
 archive/
+Data/
+*.zip
+*.wav
 
-# Saved models
-*.pkl
+# Saved models (Needed for app, ~4.7MB total)
+# *.pkl
 
 # Jupyter checkpoints
 .ipynb_checkpoints/

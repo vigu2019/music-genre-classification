@@ -1,15 +1,3 @@
-"""
-predict.py
-----------
-Loads the trained model and predicts the genre of a given .wav file.
-
-Usage:
-    python src/predict.py <path_to_audio_file.wav>
-
-Example:
-    python src/predict.py archive/Data/genres_original/jazz/jazz.00000.wav
-"""
-
 import sys
 import pickle
 import librosa
