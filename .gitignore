@@ -1,0 +1,21 @@
+# Dataset (too large for GitHub)
+archive/
+
+# Saved models
+*.pkl
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Virtual environments
+venv/
+env/
