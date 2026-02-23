@@ -67,12 +67,34 @@ jupyter notebook
 5. **Evaluation** — Compare accuracy scores, plot confusion matrix for best model
 6. **Prediction** — Predict genre of a new audio clip
 
-## 📊 Models Used
+## 📊 Models & Results
 
-- 🌲 **Random Forest** — Ensemble of decision trees
-- 🔷 **SVM** (Support Vector Machine) — Finds optimal class boundary
-- 📍 **KNN** (K-Nearest Neighbors) — Classifies by similarity
-- 🧠 **MLP** (Neural Network) — Multi-layer perceptron
+| Model | Accuracy |
+|---|---|
+| 🌲 Random Forest | ~78% |
+| 🔷 SVM (RBF Kernel) | ~72% |
+| 📍 KNN | ~65% |
+| 🧠 MLP Neural Net | ~70% |
+
+> **Best Model: Random Forest** with ~78% accuracy on the test set (200 songs).
+
+### Key Observations
+- **Classical & Pop** → highest precision (easiest to identify)
+- **Jazz & Blues** → often confused with each other (similar acoustic instruments)
+- **Rock & Disco** → sometimes mixed up (similar energy and tempo)
+
+## 🗂️ Source Scripts
+
+| Script | Purpose |
+|---|---|
+| `src/feature_extraction.py` | Extract features from raw `.wav` files |
+| `src/train.py` | Train all 4 models and save the best one |
+| `src/predict.py` | Predict genre of any `.wav` file from command line |
+
+**Predict from terminal:**
+```bash
+python src/predict.py your_song.wav
+```
 
 ## 📋 Dependencies
 
