@@ -35,7 +35,7 @@ def load_artifacts():
 def extract_features(file_path):
     """Extract the 58 audio features from a .wav file."""
     y, sr = librosa.load(file_path, duration=30)
-    features = [len(y)]
+    features: list[float] = [float(len(y))]
 
     chroma = librosa.feature.chroma_stft(y=y, sr=sr)
     features += [chroma.mean(), chroma.var()]
